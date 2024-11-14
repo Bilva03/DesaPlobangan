@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Desa Plobangan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-align: center;
+        }
+        header {
+            background-color: rgba(44, 62, 80, 0.8);
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            background-color: #2980b9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #3498db;
+        }
+        .pages-container {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: url('https://asset.kompas.com/crops/SHwSwayiVs6FCsDG2yWPnAemAlE=/0x0:739x493/750x500/data/photo/2020/08/30/5f4b2f21e2e3d.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .contact-info, .comment-form, #comment-section {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 20px;
+            color: rgb(0, 0, 0);
+        }
+        .comment-form input, .comment-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .comment-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2980b9;
+            color: white;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #3498db;
+        }
+        #comment-section {
+            text-align: left;
+        }
+        .comment {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: rgba(44, 62, 80, 0.8);
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hubungi Kami</h1>
+        <nav>
+            <ul>
+                <li><a href="DesaPlobangan.html">Beranda</a></li>
+                <li><a href="GaleriDesa.html">Galeri</a></li>
+                <li><a href="Halaman3.html">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="pages-container">
+        
+       
+        <div class="comment-form">
+            <h2>Tinggalkan Komentar</h2>
+            <form id="commentForm">
+                <input type="text" id="name" placeholder="Nama" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="comment" placeholder="Komentar" rows="4" required></textarea>
+                <button type="submit">Kirim Komentar</button>
+            </form>
+        </div>
+
+       
+        <div id="comment-section">
+            <h3>Komentar</h3>
+           
+        </div>
+
+      
+        <div class="contact-info">
+            <h2>Kontak</h2>
+            <p>Anda dapat menghubungi kami melalui:</p>
+            <a href="https://www.instagram.com/appleaur_?igsh=MTMwZDdnOTJ2dGt1ZQ=="><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="20px" height="20px"> Instagram</a> |
+            <a href="mailto:billvabillva@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" width="20px" height="20px"> Gmail</a>
+            <p>Atau kunjungi langsung Desa Plobangan, Selomerto, Wonosobo untuk melihat keindahan alam dan keramahan masyarakat kami.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Bilva Aurellia Mulyadi</p>
+        <p>&copy; XI RPL 1</p>
+    </footer>
+
+    <script>
+        
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+           
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var comment = document.getElementById("comment").value;
+            
+           
+            var commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            commentDiv.innerHTML = "<strong>" + name + " (" + email + ")</strong><p>" + comment + "</p>";
+            
+           
+            document.getElementById("comment-section").appendChild(commentDiv);
+            
+            
+            document.getElementById("commentForm").reset();
+        });
+    </script>
+</body>
+</html>
